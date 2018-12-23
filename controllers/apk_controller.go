@@ -39,7 +39,7 @@ func (this *ApkController) UploadFile() {
 		".apk":true,
 	}
 	if _,ok:=AllowExtMap[fileSuffix];!ok{
-		this.Ctx.WriteString( "后缀名不符合上传要求" )
+		this.Ctx.WriteString( "文件不符合上传要求" )
 		return
 	}
 	//创建目录

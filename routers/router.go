@@ -24,10 +24,14 @@ func init() {
 	beego.Router("/upload", &controllers.ApkController{}, "post:UploadFile")
 
 
+
 	clientNs := beego.NewNamespace("/v1",
 		/*App版本检测*/
 		beego.NSNamespace("/posts",
 			beego.NSRouter("/", &controllers.PostController{}, "get:GetPosts"),
+		),
+		beego.NSNamespace("/login",
+			beego.NSRouter("/", &controllers.AuthController{}, "post:Login"),
 		),
 	)
 
